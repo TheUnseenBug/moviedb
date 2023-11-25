@@ -11,8 +11,8 @@ const CardRow: FC<Props> = ({ columns, children }) => {
     <div className="w-full p-5">
       <div
         className={classNames(
-          `grid justify-center items-center gap-5 w-full grid-cols-${
-            columns ? columns : 2
+          `grid justify-center items-center gap-2 w-full grid-cols-${
+            columns | 4
           }`
         )}
       >

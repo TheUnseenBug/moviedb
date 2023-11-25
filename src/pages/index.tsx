@@ -4,6 +4,7 @@ import MovieListItem from "@/components/movieListItem";
 import CardRow from "@/components/cardRow";
 import { Data, Genre } from "@/types/data";
 import GenreListItem from "@/components/genreListItem";
+import Navigation from "@/components/navigation";
 
 export default function Home() {
   const [data, setData] = useState<Data>();
@@ -51,12 +52,8 @@ export default function Home() {
   }
   return (
     <main>
-      <div className="w-full mx-auto">
-        <h1 className="text-3xl mb-10 font-semibold mx-5 text-center text-white pt-2">
-          MovieDB
-        </h1>
-
-        <CardRow columns={5}>
+      <div className="max-w-7xl mx-auto ">
+        <CardRow columns={7}>
           {genres &&
             genres?.map((genre) => (
               <GenreListItem
@@ -68,7 +65,7 @@ export default function Home() {
             ))}
         </CardRow>
 
-        <CardRow columns={2}>
+        <CardRow columns={5}>
           {data?.results.map((movie, i) => (
             <MovieListItem key={i} movie={movie} />
           ))}
