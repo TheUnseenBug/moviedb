@@ -33,7 +33,7 @@ const GenreListItem: FC<Props> = ({ genre, setData }) => {
         console.error(error);
       });
   }, [setSearch, search, setData]);
-  console.log(search);
+
   return (
     <div className="flex justify-center w-full hover:brightness-50 hover:scale-105">
       <button

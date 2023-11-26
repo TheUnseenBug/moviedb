@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <main>
       <div className="max-w-7xl mx-auto ">
-        <CardRow columns={7}>
+        <CardRow columns={1}>
           {genres &&
             genres?.map((genre) => (
               <GenreListItem

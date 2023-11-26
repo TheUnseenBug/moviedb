@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 const Navigation = () => {
   const [scroll, setScroll] = useState<number>(0);
   const router = useRouter();
+  const { pathname } = useRouter();
   useEffect(() => {
     const onScroll = () => {
       setScroll(window.scrollY);
@@ -13,7 +14,6 @@ const Navigation = () => {
 
     window.addEventListener("scroll", onScroll);
   }, []);
-
   return (
     <div
       className={classNames(
@@ -26,7 +26,7 @@ const Navigation = () => {
         <div className="flex justify-around items-center gap-10 ml-16">
           <button
             className={classNames(
-              `text-${router.query.name === "/" ? "white" : "gray-300"}`
+              `${pathname === "/" ? "text-white" : "text-gray-600"}`
             )}
             onClick={() => router.push("/")}
           >
@@ -34,7 +34,7 @@ const Navigation = () => {
           </button>
           <button
             className={classNames(
-              `text-${router.query.name === "Movies" ? "white" : "gray-300"}`
+              `${pathname === "/Movies" ? "text-white" : "text-gray-600"}`
             )}
             onClick={() => router.push("/Movies")}
           >
@@ -42,7 +42,7 @@ const Navigation = () => {
           </button>
           <button
             className={classNames(
-              `text-${router.query.name === "Series" ? "white" : "gray-300"}`
+              `${pathname === "/Series" ? "text-white" : "text-gray-600"}`
             )}
             onClick={() => router.push("/Series")}
           >
@@ -50,7 +50,7 @@ const Navigation = () => {
           </button>
           <button
             className={classNames(
-              `text-${router.query.name === "Popular" ? "white" : "gray-300"}`
+              `${pathname === "/Popular" ? "text-white" : "text-gray-600"}`
             )}
             onClick={() => router.push("/Popular")}
           >
